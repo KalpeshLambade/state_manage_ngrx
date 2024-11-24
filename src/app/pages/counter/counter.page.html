@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Counter</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="counter-container">
+    <ion-label>Counter</ion-label>
+    <h1 class="counter-value">0</h1>
+    <div class="button-group">
+      <ion-button color="success" (click)="increment()">Increment</ion-button>
+      <ion-button color="danger" (click)="decrement()">Decrement</ion-button>
+      <ion-button color="primary" (click)="reset()">Reset</ion-button>
+    </div>
+  </div>
+</ion-content>
