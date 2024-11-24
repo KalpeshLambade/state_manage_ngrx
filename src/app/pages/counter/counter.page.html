@@ -7,7 +7,7 @@
 <ion-content class="ion-padding">
   <div class="counter-container">
     <ion-label>Counter</ion-label>
-    <h1 class="counter-value">0</h1>
+    <h1 class="counter-value">{{counter$ | async}}</h1>
     <div class="button-group">
       <ion-button color="success" (click)="increment()">Increment</ion-button>
       <ion-button color="danger" (click)="decrement()">Decrement</ion-button>
