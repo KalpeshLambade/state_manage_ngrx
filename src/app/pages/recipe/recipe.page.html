@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>All Recipes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    @for (recipe of recipes$ | async; track recipe.id) {
+    <ion-item>
+      <ion-card class="recipe-card">
+        <img [src]="recipe.image" alt="Recipe Image" class="recipe-image" />
+        <ion-card-header>
+          <ion-card-title>{{ recipe.name }}</ion-card-title>
+          <ion-card-subtitle
+            >{{ recipe.cuisine }} - Difficulty: {{ recipe.difficulty
+            }}</ion-card-subtitle
+          >
+        </ion-card-header>
+        <ion-card-content>
+          <p>Prep Time: {{ recipe.prepTimeMinutes }} minutes</p>
+          <p>Cook Time: {{ recipe.cookTimeMinutes }} minutes</p>
+          <p>Calories per Serving: {{ recipe.caloriesPerServing }} kcal</p>
+          <p>Servings: {{ recipe.servings }}</p>
+          <p>Rating: {{ recipe.rating }} ({{ recipe.reviewCount }} reviews)</p>
+
+          <h3>Tags</h3>
+          <ion-chip *ngFor="let tag of recipe.tags">
+            <ion-label>{{ tag }}</ion-label>
+          </ion-chip>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+    }
+  </ion-list>
+</ion-content>

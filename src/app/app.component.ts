@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { ServerService } from './services/api/server.service';
+import { Store } from '@ngrx/store';
+import { receipeAction } from './states/recipe/recipe.action';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent implements OnInit{
-  constructor(
-    private serverService: ServerService
-  ) {}
+export class AppComponent implements OnInit {
+  constructor(private store: Store) {}
 
-  ngOnInit(){
+  ngOnInit() {
     this.loadProducts();
   }
 
-  async loadProducts(){
-    let res = await this.serverService.getProductList();
-    console.log(res)
+  async loadProducts() {
+    this.store.dispatch(receipeAction.loadRecipe());
   }
 }

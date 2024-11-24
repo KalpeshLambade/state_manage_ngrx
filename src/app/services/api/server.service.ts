@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
+import { map, Observable } from 'rxjs';
+import { Recipe } from 'src/app/models/recipes';
 
 @Injectable({
   providedIn: 'root',
@@ -8,17 +10,11 @@ import { environment } from 'src/environments/environment';
 export class ServerService {
   constructor(private http: HttpClient) {}
 
-  getProductList() {
-    return new Promise<any>((resolve, reject) => {
-      const url = environment.server + 'carts';
-      this.http.get(url).subscribe({
-        next: (res: any) => {
-          resolve(res);
-        },
-        error: (err: any) => {
-          resolve(err);
-        },
-      });
-    });
+  getAllRecipes(): Observable<Recipe[]> {
+    const url = environment.server + 'recipes';
+    return this.http.get<any>(url).pipe(
+      map((response: any) => response.recipes)
+    );
   }
+
 }

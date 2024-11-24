@@ -12,9 +12,9 @@ const routes: Routes = [
     loadChildren: () => import('./pages/counter/counter.module').then( m => m.CounterPageModule)
   },
   {
-    path: 'products',
-    loadChildren: () => import('./pages/products/products.module').then( m => m.ProductsPageModule)
-  },
+    path: 'recipe',
+    loadChildren: () => import('./pages/recipe/recipe.module').then( m => m.RecipePageModule)
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,64 @@
+.recipe-card {
+  width: 40%;  // Set card width to 40% of the parent container
+  height: auto;  // Let the card adjust its height based on content
+  margin: 20px auto;  // Center the card horizontally with margin
+  border-radius: 12px;  // Rounded corners for a smoother look
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth and separation
+  overflow: hidden;  // Ensures content doesn't spill out of the rounded corners
+  display: flex;
+  flex-direction: column;  // Stack image and content vertically
+  justify-content: space-between;  // Ensure space between the image and content
+}
+
+.recipe-image {
+  width: 100%;  // Ensure the image fills the width of the card
+  height: 60%;  // Set the image height to 60% of the card's height
+  object-fit: cover;  // Ensure the image covers the space without distortion
+  border-top-left-radius: 12px;  // Rounded corners for the top of the image
+  border-top-right-radius: 12px;  // Rounded corners for the top of the image
+}
+
+ion-card-header {
+  padding: 10px;  // Add padding around the header content
+  text-align: center;  // Center the text inside the card header
+}
+
+ion-card-title {
+  font-size: 1.1rem;  // Adjust the title size
+  font-weight: bold;
+  margin-bottom: 5px;  // Add space between the title and subtitle
+}
+
+ion-card-subtitle {
+  font-size: 0.9rem;  // Adjust subtitle font size
+  color: #555;  // Subtitle text color
+}
+
+ion-card-content {
+  padding: 10px;  // Add padding inside the content area
+  flex: 1;  // Ensure the content area takes up the remaining space in the card
+  font-size: 0.9rem;  // Set a base font size for content
+}
+
+ion-chip {
+  margin: 5px;  // Add margin between tags
+}
+
+ion-list {
+  display: flex;
+  justify-content: center;  // Center the list of cards
+  align-items: flex-start;  // Align the cards at the top of the screen
+  flex-wrap: wrap;  // Allow the cards to wrap onto new lines on smaller screens
+  padding: 0;
+}
+
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+ion-header {
+  padding: 0 16px;
+}
